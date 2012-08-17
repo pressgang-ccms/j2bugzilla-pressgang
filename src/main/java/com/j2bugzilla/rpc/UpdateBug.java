@@ -44,7 +44,6 @@ public class UpdateBug implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void setResultMap(final Map<Object, Object> hash)
 	{
 		Object[] modified = (Object[]) hash.get("bugs");
@@ -58,7 +57,6 @@ public class UpdateBug implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<Object, Object> getParameterMap()
 	{
 		Map<Object, Object> params = new HashMap<Object, Object>();
@@ -84,7 +82,6 @@ public class UpdateBug implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public String getMethodName()
 	{
 		return METHOD_NAME;
