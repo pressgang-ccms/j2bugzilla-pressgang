@@ -51,7 +51,6 @@ public class BugzillaVersion implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void setResultMap(final Map<Object, Object> hash)
 	{
 		this.hash = hash;
@@ -60,7 +59,6 @@ public class BugzillaVersion implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<Object, Object> getParameterMap()
 	{
 		return params;
@@ -69,7 +67,6 @@ public class BugzillaVersion implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public String getMethodName()
 	{
 		return METHOD_NAME;

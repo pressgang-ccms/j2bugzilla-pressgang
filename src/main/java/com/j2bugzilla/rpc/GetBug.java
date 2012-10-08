@@ -53,7 +53,6 @@ public class GetBug<T extends BugBase> implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void setResultMap(final Map<Object, Object> hash)
 	{
 		this.hash = hash;
@@ -62,7 +61,6 @@ public class GetBug<T extends BugBase> implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public Map<Object, Object> getParameterMap()
 	{
 		return params;
@@ -113,7 +111,6 @@ public class GetBug<T extends BugBase> implements BugzillaMethod
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public String getMethodName()
 	{
 		return GET_BUG;
