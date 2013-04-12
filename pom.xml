@@ -2,9 +2,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.pressgang.ccms</groupId>
-    <artifactId>j2bugzilla-extended</artifactId>
+    <artifactId>j2bugzilla-pressgang</artifactId>
     <version>1.1-SNAPSHOT</version>
-    <name>J2Bugzilla Extended</name>
+    <name>J2Bugzilla PressGang</name>
     <description>A library for accessing Bugzilla installations in Java</description>
 
     <parent>
