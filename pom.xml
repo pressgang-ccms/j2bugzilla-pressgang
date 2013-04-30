@@ -13,6 +13,12 @@
         <version>1.5</version>
     </parent>
 
+    <scm>
+        <url>https://github.com/pressgang-ccms/j2bugzilla-pressang</url>
+        <connection>scm:git@github.com:pressgang-ccms/j2bugzilla-pressgang.git</connection>
+        <developerConnection>scm:git@github.com:pressgang-ccms/j2bugzilla-pressang.git</developerConnection>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.xmlrpc</groupId>

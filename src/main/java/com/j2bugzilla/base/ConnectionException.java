@@ -6,32 +6,27 @@ package com.j2bugzilla.base;
  * network-related problem such as a timeout or malformed URL, or it may be an
  * underlying XML-RPC exception, but it generally indicates that any further
  * Bugzilla calls will fail.
- * 
+ * <p/>
  * ConnectionException will always be a wrapper for a nested
  * <code>Exception</code> which indicates the cause of the error.
- * 
+ *
  * @author Tom
- * 
  */
-public class ConnectionException extends Exception
-{
+public class ConnectionException extends Exception {
 
-	/**
-	 * Eclipse-generated SUID
-	 */
-	private static final long serialVersionUID = 2957676868743832929L;
+    /**
+     * Eclipse-generated SUID
+     */
+    private static final long serialVersionUID = 2957676868743832929L;
 
-	/**
-	 * Public constructor which calls super()
-	 * 
-	 * @param message
-	 *            A custom error message describing the issue
-	 * @param cause
-	 *            The root cause of the exception
-	 */
-	public ConnectionException(final String message, final Throwable cause)
-	{
-		super(message, cause);
-	}
+    /**
+     * Public constructor which calls super()
+     *
+     * @param message A custom error message describing the issue
+     * @param cause   The root cause of the exception
+     */
+    public ConnectionException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 
 }
