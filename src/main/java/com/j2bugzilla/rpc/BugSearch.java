@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.j2bugzilla.base.Bug;
 import com.j2bugzilla.base.BugBase;
-import com.j2bugzilla.base.BugFactory;
+import com.j2bugzilla.base.factory.BugFactory;
 import com.j2bugzilla.base.BugzillaMethod;
 
 /**

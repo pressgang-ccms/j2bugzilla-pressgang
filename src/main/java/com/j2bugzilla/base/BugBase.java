@@ -8,7 +8,7 @@ import java.util.Map;
  * This class encapsulates all information about a bug report posted on a
  * Bugzilla installation. It provides getter methods for various properties,
  * such as the bug summary and status. To obtain a new {@code Bug} object, you
- * must use the {@link BugFactory} class which provides a fluent interface for
+ * must use the {@link com.j2bugzilla.base.factory.BugFactory} class which provides a fluent interface for
  * bug creation. Note that the {@code BugFactory} does not submit a report for
  * you -- to actually add the created bug to your Bugzilla installation, you
  * must use the {@link ReportBug} method.
@@ -167,7 +167,7 @@ abstract public class BugBase {
     }
 
     /**
-     * Sets wether this bug is open of not
+     * Sets whether this bug is open of not
      *
      * @param product true if open, false otherwise
      */

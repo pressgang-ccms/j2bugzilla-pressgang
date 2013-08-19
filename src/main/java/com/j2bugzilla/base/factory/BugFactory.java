@@ -1,11 +1,13 @@
-package com.j2bugzilla.base;
+package com.j2bugzilla.base.factory;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import com.j2bugzilla.base.BugBase;
+
 /**
  * The {@code BugFactory} class allows users of the j2bugzilla API to construct
- * new {@link Bug Bugs} using a fluent interface. It also provides a method for
+ * new {@link com.j2bugzilla.base.Bug Bugs} using a fluent interface. It also provides a method for
  * creating a new {@code Bug} based off of a {@code Map} provided from an
  * XML-RPC method.
  *
@@ -24,7 +26,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Creates a new {@link Bug} based off of the provided {@code Map} of
+     * Creates a new {@link com.j2bugzilla.base.Bug} based off of the provided {@code Map} of
      * properties.
      *
      * @param properties A {@code Map<String, Object>} describing the internal
@@ -44,7 +46,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets up this {@link BugFactory} to produce a new {@link Bug}. This method
+     * Sets up this {@link BugFactory} to produce a new {@link com.j2bugzilla.base.Bug}. This method
      * must be called before any {@code setXxx()} methods or the
      * {@link #createBug()} method.
      *
@@ -59,7 +61,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the alias of the {@link Bug} to be created by this
+     * Sets the alias of the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}. Note that by default, Bugzilla limits aliases to 20
      * characters.
      *
@@ -75,7 +77,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the operating system of the {@link Bug} to be created by this
+     * Sets the operating system of the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param os The operating system for a bug.
@@ -90,7 +92,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the platform of the {@link Bug} to be created by this
+     * Sets the platform of the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param platform The platform for a bug.
@@ -105,7 +107,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the priority of the {@link Bug} to be created by this
+     * Sets the priority of the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param priority A {@link Priority} describing the relative importance of a
@@ -121,7 +123,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the product associated with the {@link Bug} to be created by this
+     * Sets the product associated with the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param product A product name to associate with a bug.
@@ -136,7 +138,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the component associated with the {@link Bug} to be created by this
+     * Sets the component associated with the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param component A component name to associate with a bug.
@@ -151,7 +153,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the summary associated with the {@link Bug} to be created by this
+     * Sets the summary associated with the {@link com.j2bugzilla.base.Bug} to be created by this
      * {@link BugFactory}.
      *
      * @param summary A one-line summary to describe a bug.
@@ -166,7 +168,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the version of the software associated with the {@link Bug} to be
+     * Sets the version of the software associated with the {@link com.j2bugzilla.base.Bug} to be
      * created by this {@link BugFactory}.
      *
      * @param version A version number to associate with a bug.
@@ -181,7 +183,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Sets the longer description associated with the {@link Bug} to be created
+     * Sets the longer description associated with the {@link com.j2bugzilla.base.Bug} to be created
      * by this {@link BugFactory}.
      *
      * @param description The description used as the initial comment on a bug.
@@ -196,7 +198,7 @@ public class BugFactory<T extends BugBase> {
     }
 
     /**
-     * Creates a new {@link Bug} using the properties set in this
+     * Creates a new {@link com.j2bugzilla.base.Bug} using the properties set in this
      * {@link BugFactory}. This method must be called after {@link #newBug()}.
      *
      * @return A new {@code Bug} object.
