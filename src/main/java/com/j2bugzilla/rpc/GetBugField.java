@@ -48,7 +48,7 @@ public class GetBugField implements BugzillaMethod {
      *
      * @return A List of {@link com.j2bugzilla.base.BugField} objects
      */
-    public BugField getBugFields() {
+    public BugField getBugField() {
         BugField result = null;
         if (hash.containsKey("fields")) {
             final Object[] bugFields = (Object[]) hash.get("fields");

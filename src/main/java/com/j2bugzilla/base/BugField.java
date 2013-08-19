@@ -1,7 +1,9 @@
 package com.j2bugzilla.base;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BugField {
@@ -99,6 +101,23 @@ public class BugField {
 
     public void setType(Integer type) {
         getInternalState().put("type", type);
+    }
+
+    public List<BugFieldValue> getValues() {
+        final Object[] values = (Object[]) getInternalState().get("values");
+        if (values == null) {
+            return null;
+        } else {
+            final ArrayList<BugFieldValue> bugFieldValues = new ArrayList<BugFieldValue>();
+
+            for (final Object o : values) {
+                final HashMap<String, Object> valueMap = (HashMap<String, Object>) o;
+                final BugFieldValue value = new BugFieldValue(valueMap);
+                bugFieldValues.add(value);
+            }
+
+            return bugFieldValues;
+        }
     }
 
     /**
