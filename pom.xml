@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.pressgang.ccms</groupId>
     <artifactId>j2bugzilla-pressgang</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.4</version>
     <name>J2Bugzilla PressGang</name>
     <description>A library for accessing Bugzilla installations in Java</description>
 
@@ -15,8 +15,8 @@
 
     <scm>
         <url>https://github.com/pressgang-ccms/j2bugzilla-pressang</url>
-        <connection>scm:git@github.com:pressgang-ccms/j2bugzilla-pressgang.git</connection>
-        <developerConnection>scm:git@github.com:pressgang-ccms/j2bugzilla-pressang.git</developerConnection>
+        <connection>scm:git:git@github.com:pressgang-ccms/j2bugzilla-pressgang.git</connection>
+        <developerConnection>scm:git:git@github.com:pressgang-ccms/j2bugzilla-pressang.git</developerConnection>
     </scm>
 
     <dependencies>
