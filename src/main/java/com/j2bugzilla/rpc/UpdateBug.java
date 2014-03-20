@@ -26,7 +26,7 @@ public class UpdateBug implements BugzillaMethod {
      */
     private final BugBase bug;
     private String updateComment;
-    private boolean isPrivate;
+    private boolean isCommentPrivate;
 
     /**
      * Creates a new {@link UpdateBug} object to submit to the Bugzilla
@@ -39,7 +39,7 @@ public class UpdateBug implements BugzillaMethod {
     public UpdateBug(final BugBase bug) {
         this.bug = bug;
         updateComment = null;
-        isPrivate = false;
+        isCommentPrivate = false;
     }
 
     /**
@@ -55,7 +55,7 @@ public class UpdateBug implements BugzillaMethod {
     public UpdateBug(final BugBase bug, final String comment) {
         this.bug = bug;
         updateComment = comment;
-        isPrivate = false;
+        isCommentPrivate = false;
     }
 
     /**
@@ -66,12 +66,12 @@ public class UpdateBug implements BugzillaMethod {
      *
      * @param bug
      * @param comment
-     * @param isPrivate
+     * @param isCommentPrivate
      */
-    public UpdateBug(final BugBase bug, final String comment, final boolean isPrivate) {
+    public UpdateBug(final BugBase bug, final String comment, final boolean isCommentPrivate) {
         this.bug = bug;
         updateComment = comment;
-        this.isPrivate = isPrivate;
+        this.isCommentPrivate = isCommentPrivate;
     }
 
     /**
@@ -119,7 +119,7 @@ public class UpdateBug implements BugzillaMethod {
         if (updateComment != null) {
             Map<String, Object> comment = new HashMap<String, Object>();
             comment.put("body", updateComment);
-            comment.put("is_private", isPrivate);
+            comment.put("is_private", isCommentPrivate);
             params.put("comment", comment);
         }
 
@@ -141,11 +141,11 @@ public class UpdateBug implements BugzillaMethod {
         updateComment = comment;
     }
 
-    public boolean isPrivate() {
-        return isPrivate;
+    public boolean isCommentPrivate() {
+        return isCommentPrivate;
     }
 
-    public void setPrivate(boolean privateComment) {
-        isPrivate = privateComment;
+    public void setCommentPrivate(boolean privateComment) {
+        isCommentPrivate = privateComment;
     }
 }
