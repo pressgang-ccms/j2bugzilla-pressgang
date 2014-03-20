@@ -25,6 +25,8 @@ public class UpdateBug implements BugzillaMethod {
      * A {@link Bug} to update on the installation.
      */
     private final BugBase bug;
+    private String updateComment;
+    private boolean isPrivate;
 
     /**
      * Creates a new {@link UpdateBug} object to submit to the Bugzilla
@@ -36,6 +38,40 @@ public class UpdateBug implements BugzillaMethod {
      */
     public UpdateBug(final BugBase bug) {
         this.bug = bug;
+        updateComment = null;
+        isPrivate = false;
+    }
+
+    /**
+     * Creates a new {@link UpdateBug} object to submit to the Bugzilla
+     * webservice. The {@link Bug} on the installation identified by the id or
+     * alias of the bug provided will have its fields updated to match those of
+     * the values in the provided bug.
+     *
+     * @param bug
+     * @param comment
+     * @param isPrivate
+     */
+    public UpdateBug(final BugBase bug, final String comment) {
+        this.bug = bug;
+        updateComment = comment;
+        isPrivate = false;
+    }
+
+    /**
+     * Creates a new {@link UpdateBug} object to submit to the Bugzilla
+     * webservice. The {@link Bug} on the installation identified by the id or
+     * alias of the bug provided will have its fields updated to match those of
+     * the values in the provided bug.
+     *
+     * @param bug
+     * @param comment
+     * @param isPrivate
+     */
+    public UpdateBug(final BugBase bug, final String comment, final boolean isPrivate) {
+        this.bug = bug;
+        updateComment = comment;
+        this.isPrivate = isPrivate;
     }
 
     /**
@@ -60,16 +96,32 @@ public class UpdateBug implements BugzillaMethod {
 
         params.put("ids", bug.getID());
 
-        params.put("alias", internals.get("alias"));
-        params.put("assigned_to", internals.get("assigned_to"));
-        params.put("component", internals.get("component"));
-        params.put("op_sys", internals.get("op_sys"));
-        params.put("platform", internals.get("platform"));
-        params.put("priority", internals.get("priority"));
-        params.put("product", internals.get("product"));
-        params.put("status", internals.get("status"));
-        params.put("summary", internals.get("summary"));
-        params.put("version", internals.get("version"));
+        if (internals.get("assigned_to") != null)
+            params.put("assigned_to", internals.get("assigned_to"));
+        if (internals.get("component") != null)
+            params.put("component", bug.getComponent());
+        if (internals.get("op_sys") != null)
+            params.put("op_sys", internals.get("op_sys"));
+        if (internals.get("platform") != null)
+            params.put("platform", internals.get("platform"));
+        if (internals.get("priority") != null)
+            params.put("priority", internals.get("priority"));
+        if (internals.get("product") != null)
+            params.put("product", internals.get("product"));
+        if (internals.get("status") != null)
+            params.put("status", internals.get("status"));
+        if ("closed".equalsIgnoreCase(bug.getStatus()))
+            params.put("resolution", internals.get("resolution"));
+        if (internals.get("summary") != null)
+            params.put("summary", internals.get("summary"));
+        if (internals.get("version") != null)
+            params.put("version", bug.getVersion());
+        if (updateComment != null) {
+            Map<String, Object> comment = new HashMap<String, Object>();
+            comment.put("body", updateComment);
+            comment.put("is_private", isPrivate);
+            params.put("comment", comment);
+        }
 
         return params;
     }
@@ -79,5 +131,21 @@ public class UpdateBug implements BugzillaMethod {
      */
     public String getMethodName() {
         return METHOD_NAME;
+    }
+
+    public String getComment() {
+        return updateComment;
+    }
+
+    public void setComment(String comment) {
+        updateComment = comment;
+    }
+
+    public boolean isPrivate() {
+        return isPrivate;
+    }
+
+    public void setPrivate(boolean privateComment) {
+        isPrivate = privateComment;
     }
 }

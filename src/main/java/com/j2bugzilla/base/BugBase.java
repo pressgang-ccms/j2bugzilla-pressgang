@@ -108,7 +108,20 @@ abstract public class BugBase {
      * @return A {@code String} representing the unique alias for this bug.
      */
     public String getAlias() {
-        return getInternalState().get("alias").toString();
+        final Object alias = getInternalState().get("alias");
+
+        if (alias instanceof Object[]) {
+            final StringBuffer retValue = new StringBuffer();
+            final Object[] aliases = (Object[]) alias;
+            for (final Object aliasElement : aliases) {
+                if (retValue.length() != 0) retValue.append("\n");
+                retValue.append(aliasElement.toString());
+            }
+
+            return retValue.toString();
+        }
+
+        return alias.toString();
     }
 
     /**
@@ -235,7 +248,20 @@ abstract public class BugBase {
      * @return the version associated with this {@link Bug}
      */
     public String getVersion() {
-        return getInternalState().get("version").toString();
+        final Object version = getInternalState().get("version");
+
+        if (version instanceof Object[]) {
+            final StringBuffer retValue = new StringBuffer();
+            final Object[] versions = (Object[]) version;
+            for (final Object versionsElement : versions) {
+                if (retValue.length() != 0) retValue.append("\n");
+                retValue.append(versionsElement.toString());
+            }
+
+            return retValue.toString();
+        }
+
+        return version.toString();
     }
 
     /**
@@ -272,6 +298,25 @@ abstract public class BugBase {
      */
     public void setStatus(final String status) {
         getInternalState().put("status", status);
+    }
+
+    /**
+     * Returns the resolution of this {@link Bug} indicating whether.
+     *
+     * @return the resolution of a {@link Bug}
+     */
+    public String getResolution() {
+        return getInternalState().get("resolution").toString();
+    }
+
+    /**
+     * Sets the resolution of this {@link Bug} indicating whether it is open
+     * or closed.
+     *
+     * @param resolution The resolution of this bug.
+     */
+    public void setResolution(final String resolution) {
+        getInternalState().put("resolution", resolution);
     }
 
     /**

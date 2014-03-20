@@ -1,5 +1,6 @@
 package com.j2bugzilla.base;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +17,7 @@ public class ECSBug extends BugBase {
     private static String[] requiredKeys = {"product"};
 
     public ECSBug() {
-        super();
+        setInternalState(new HashMap<String, Object>());
     }
 
     public ECSBug(final Map<String, Object> state) {

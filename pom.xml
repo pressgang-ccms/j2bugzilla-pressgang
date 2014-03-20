@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.pressgang.ccms</groupId>
     <artifactId>j2bugzilla-pressgang</artifactId>
-    <version>1.4</version>
+    <version>1.4.1-SNAPSHOT</version>
     <name>J2Bugzilla PressGang</name>
     <description>A library for accessing Bugzilla installations in Java</description>
 

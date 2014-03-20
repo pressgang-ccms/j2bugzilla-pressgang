@@ -1,5 +1,6 @@
 package com.j2bugzilla.base;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -10,6 +11,10 @@ public class Bug extends BugBase {
      */
     private static String[] requiredKeys = {"product", "component", "summary", "version"};
 
+    public Bug() {
+        setInternalState(new HashMap<String, Object>());
+    }
+
     /**
      * Constructor for creating a new {@link Bug} to submit to an installation.
      * The constructor ensures any required values in {@link #requiredKeys} are
@@ -17,7 +22,7 @@ public class Bug extends BugBase {
      *
      * @param state A <code>Map</code> pairing required keys to values
      */
-    Bug(final Map<String, Object> state) {
+    public Bug(final Map<String, Object> state) {
         super(state);
     }
 
