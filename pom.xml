@@ -14,9 +14,9 @@
     </parent>
 
     <scm>
-        <url>https://github.com/pressgang-ccms/j2bugzilla-pressang</url>
+        <url>https://github.com/pressgang-ccms/j2bugzilla-pressgang</url>
         <connection>scm:git:git@github.com:pressgang-ccms/j2bugzilla-pressgang.git</connection>
-        <developerConnection>scm:git:git@github.com:pressgang-ccms/j2bugzilla-pressang.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:pressgang-ccms/j2bugzilla-pressgang.git</developerConnection>
     </scm>
 
     <dependencies>
